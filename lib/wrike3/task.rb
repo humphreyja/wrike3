@@ -7,8 +7,8 @@ module Wrike3
     end
 
     # Get task list
-    def list(folder = nil, params = {})
-      if folder == nil
+    def list(folder_id = nil, params = {})
+      if folder_id == nil
         wrike.execute(:get, api_url('tasks'), params)
       else
         wrike.execute(:get, api_url("folders/#{folder_id}/tasks"), params)
