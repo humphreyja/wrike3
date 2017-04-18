@@ -70,7 +70,7 @@ module Wrike3
     private
 
     def to_j(parameters = {})
-      parameters.to_json
+      parameters.as_json
     end
 
     def auth_headers(options = {})
