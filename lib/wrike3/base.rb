@@ -70,13 +70,7 @@ module Wrike3
     private
 
     def to_j(parameters = {})
-      parameters.each do |item|
-        if item.last.is_a?(Hash) || item.last.is_a?(Array)
-          parameters[item.first.to_s] = item.last.to_json
-        end
-      end
-
-      parameters
+      parameters.to_json
     end
 
     def auth_headers(options = {})
