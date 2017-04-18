@@ -19,5 +19,9 @@ module Wrike3
     def update(id, params = {})
       wrike.execute(:put, api_url("accounts/#{id}"), params)
     end
+    
+    def version
+      wrike.execute(:get, api_url('version'))
+    end
   end
 end
