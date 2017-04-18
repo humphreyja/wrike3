@@ -7,8 +7,8 @@ module Wrike3
     end
 
     # Get task list
-    def list(taskable_type = nil, taskable_id = nil, params = {})
-      wrike.execute(:get, api_url(nested_path('tasks', taskable_type, taskable_id)), params)
+    def list(params = {})
+      wrike.execute(:get, api_url('tasks'), params)
     end
 
     def details(id, params = {})
