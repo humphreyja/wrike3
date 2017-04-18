@@ -58,8 +58,8 @@ module Wrike3
       @token ||= Wrike3::Token.new(self)
     end
     
-    def version
-      execute(:get, api_url('version'))
+    def additional
+      @additional ||= Wrike3::Additional.new(self)
     end
 
     def execute(method, url, parameters = {}, request_headers = {}, include_auth_header = true, body = nil)
